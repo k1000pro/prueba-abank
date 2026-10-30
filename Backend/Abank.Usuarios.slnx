@@ -2,5 +2,6 @@
   <Folder Name="/src/">
     <Project Path="src/Abank.Usuarios.Application/Abank.Usuarios.Application.csproj" />
     <Project Path="src/Abank.Usuarios.Domain/Abank.Usuarios.Domain.csproj" />
+    <Project Path="src/Abank.Usuarios.Infrastructure/Abank.Usuarios.Infrastructure.csproj" />
   </Folder>
 </Solution>
