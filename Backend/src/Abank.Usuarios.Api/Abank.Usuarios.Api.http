@@ -1,0 +1,52 @@
+# 8080 con docker compose, 5000 con dotnet run
+@host = http://localhost:8080
+@token = pegar-aqui-el-access_token
+
+### Login
+POST {{host}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "telefono": "70000000",
+  "password": "Admin12345"
+}
+
+### Listar usuarios (no pide token)
+GET {{host}}/api/v1/users?page=1&pageSize=20
+
+### Obtener uno
+GET {{host}}/api/v1/users/2
+Authorization: Bearer {{token}}
+
+### Crear
+POST {{host}}/api/v1/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nombres": "test",
+  "apellidos": "test",
+  "fechanacimiento": "1996-05-10",
+  "telefono": "73212656",
+  "email": "test@gmail.com",
+  "password": "Prueba123",
+  "direccion": "direccion"
+}
+
+### Actualizar (password opcional)
+PUT {{host}}/api/v1/users/2
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nombres": "María José",
+  "apellidos": "López Ramírez",
+  "fechanacimiento": "1995-06-21",
+  "telefono": "71234567",
+  "email": "maria.lopez@abank-pruebas.com",
+  "direccion": "Col. San Benito, San Salvador"
+}
+
+### Eliminar
+DELETE {{host}}/api/v1/users/4
+Authorization: Bearer {{token}}
