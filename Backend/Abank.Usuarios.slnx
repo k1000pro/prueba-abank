@@ -5,4 +5,7 @@
     <Project Path="src/Abank.Usuarios.Domain/Abank.Usuarios.Domain.csproj" />
     <Project Path="src/Abank.Usuarios.Infrastructure/Abank.Usuarios.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Abank.Usuarios.UnitTests/Abank.Usuarios.UnitTests.csproj" />
+  </Folder>
 </Solution>
