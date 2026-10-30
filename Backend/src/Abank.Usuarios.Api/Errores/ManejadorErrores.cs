@@ -14,7 +14,8 @@ public class ManejadorErrores(IProblemDetailsService problemDetails, ILogger<Man
         {
             ValidationException ex => new ValidationProblemDetails(
                 ex.Errors
-                    .GroupBy(e => e.PropertyName)
+                    // en minúscula para que coincida con las llaves del JSON (fechanacimiento, etc.)
+                    .GroupBy(e => e.PropertyName.ToLowerInvariant())
                     .ToDictionary(g => g.Key, g => g.Select(e => e.ErrorMessage).ToArray()))
             {
                 Status = StatusCodes.Status400BadRequest,

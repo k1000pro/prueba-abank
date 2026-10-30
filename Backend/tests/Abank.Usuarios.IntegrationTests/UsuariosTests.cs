@@ -103,7 +103,7 @@ public class UsuariosTests(ApiFactory factory)
 
         Assert.Equal(HttpStatusCode.BadRequest, respuesta.StatusCode);
         var problema = await respuesta.Content.ReadFromJsonAsync<JsonElement>();
-        Assert.True(problema.GetProperty("errors").TryGetProperty("Email", out _));
+        Assert.True(problema.GetProperty("errors").TryGetProperty("email", out _));
     }
 
     [Fact]
